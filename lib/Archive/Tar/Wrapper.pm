@@ -1255,9 +1255,3 @@ Linux Gazette article from Ben Okopnik, L<issue 87|https://linuxgazette.net/87/o
 =head1 AUTHOR
 
 2005, Mike Schilli <cpan@perlmeister.com>
-
-=head1 MAINTAINER
-
-2018, Alceu Rodrigues de Freitas Junior <glasswalk3r@yahoo.com.br>
-
-=cut

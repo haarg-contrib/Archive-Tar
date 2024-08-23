@@ -23,6 +23,10 @@ my $logger = get_logger();
 
 =pod
 
+=encoding UTF-8
+
+=for stopwords MERCHANTABILITY Okopnik Unmounts untarring tardir
+
 =head1 NAME
 
 Archive::Tar::Wrapper - API wrapper around the 'tar' utility
@@ -161,41 +165,41 @@ C<max_cmd_line_args>:
          max_cmd_line_args  => 1024
      );
 
-The expectable parameters are:
+The allowable parameters are:
 
 =over
 
 =item *
 
-tar
+C<tar>
 
 =item *
 
-tmpdir
+C<tmpdir>
 
 =item *
 
-tar_read_options
+C<tar_read_options>
 
 =item *
 
-tar_write_options
+C<tar_write_options>
 
 =item *
 
-tar_gnu_read_options
+C<tar_gnu_read_options>
 
 =item *
 
-tar_gnu_write_options
+C<tar_gnu_write_options>
 
 =item *
 
-max_cmd_line_args: defaults to 512
+C<max_cmd_line_args>: defaults to 512
 
 =item *
 
-ramdisk
+C<ramdisk>
 
 =back
 
@@ -303,7 +307,7 @@ goes out of scope.
 
 C<read> handles both compressed and uncompressed files. To find out if
 a file is compressed or uncompressed, it tries to guess by extension,
-then by checking the first couple of bytes in the tarfile.
+then by checking the first couple of bytes in the tar file.
 
 If only a limited number of files is needed from a tarball, they
 can be specified after the tarball name:
@@ -553,11 +557,11 @@ Returns:
 
 =item *
 
-a "z" character if the file is compressed with gzip.
+a "z" character if the file is compressed with C<gzip>.
 
 =item *
 
-a "j" character if the file is compressed with bzip2.
+a "j" character if the file is compressed with C<bzip2>.
 
 =item *
 
@@ -633,7 +637,7 @@ settings, specify them in the options hash:
 
 If $file_or_stringref is a reference to a Unicode string, the C<binmode>
 option has to be set to make sure the string gets written as proper UTF-8
-into the tarfile:
+into the tar file:
 
     $arch->add($logic_path, $stringref, { binmode => ":utf8" });
 
@@ -809,8 +813,8 @@ sub remove {
     my $items = $arch->list_all();
 
 Returns a reference to a (possibly huge) array of items in the
-tarfile. Each item is a reference to an array, containing two
-elements: the relative path of the item in the tarfile and the
+tar file. Each item is a reference to an array, containing two
+elements: the relative path of the item in the tar file and the
 physical path to the unpacked file or directory on disk.
 
 To iterate over the list, the following construct can be used:
@@ -821,7 +825,7 @@ To iterate over the list, the following construct can be used:
         print "Tarpath: $tar_path Tempfile: $real_path\n";
     }
 
-If the list of items in the tarfile is big, use C<list_reset()> and
+If the list of items in the tar file is big, use C<list_reset()> and
 C<list_next()> instead of C<list_all>.
 
 =cut
@@ -842,8 +846,8 @@ sub list_all {
 
     my ($tar_path, $phys_path, $type) = $arch->list_next();
 
-Returns the next item in the tarfile. It returns a list of three scalars:
-the relative path of the item in the tarfile, the physical path
+Returns the next item in the tar file. It returns a list of three scalars:
+the relative path of the item in the tar file, the physical path
 to the unpacked file or directory on disk, and the type of the entry
 (f=file, d=directory, l=symlink). Note that by default,
 B<Archive::Tar::Wrapper> won't display directories, unless the C<dirs>
@@ -1045,15 +1049,15 @@ Expects as parameter a hash with options to mount the RAM disk, like:
 
 =item *
 
-size
+C<size>
 
 =item *
 
-type (most probably C<tmpfs>)
+C<type> (most probably C<tmpfs>)
 
 =item *
 
-tmpdir
+C<tmpdir>
 
 =back
 
@@ -1149,7 +1153,7 @@ create the RAM disk by hand by running
    # mkdir -p /mnt/myramdisk
    # mount -t tmpfs -o size=20m tmpfs /mnt/myramdisk
 
-and then feeding the ramdisk as a temporary directory to
+and then feeding the RAM disk as a temporary directory to
 B<Archive::Tar::Wrapper>, like
 
    my $tar = Archive::Tar::Wrapper->new( tmpdir => '/mnt/myramdisk' );

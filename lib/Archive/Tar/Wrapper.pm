@@ -683,6 +683,8 @@ sub ramdisk_unmount {
 
 __END__
 
+=pod
+
 =encoding UTF-8
 
 =for stopwords MERCHANTABILITY Okopnik Unmounts untarring tardir
@@ -1226,22 +1228,6 @@ completely by installing in a different path than C<C:\Program Files>.
 Installing both C<bsdtar> and C<bzip2> in C<C:\GnuWin32> will probably be enough
 when running the installers.
 
-=head1 LEGALESE
-
-This software is copyright (c) 2005 of Mike Schilli.
-
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-Archive-Tar-Wrapper. If not, see L<http://www.gnu.org/licenses/>.
-
 =head1 SEE ALSO
 
 =over
@@ -1251,7 +1237,3 @@ Archive-Tar-Wrapper. If not, see L<http://www.gnu.org/licenses/>.
 Linux Gazette article from Ben Okopnik, L<issue 87|https://linuxgazette.net/87/okopnik.html>.
 
 =back
-
-=head1 AUTHOR
-
-2005, Mike Schilli <cpan@perlmeister.com>

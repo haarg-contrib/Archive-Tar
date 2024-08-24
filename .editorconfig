@@ -13,3 +13,6 @@ insert_final_newline     = true
 [*.{yml,yaml}]
 indent_size = 2
 quote_type = single
+
+[Changes]
+indent_size = 2

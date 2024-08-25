@@ -567,7 +567,7 @@ sub write {    ## no critic (ProhibitBuiltinHomonyms)
 
 sub _rem_dots {
     my ( $self, $entries_ref ) = @_;
-    my ( $first, $second );
+    my ( $first, $second ); ## no critic (NamingConventions::ProhibitAmbiguousNames)
     my $index = 0;
     my $found = 0;
 

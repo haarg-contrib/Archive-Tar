@@ -1,5 +1,7 @@
 Revision history for Perl extension Archive::Tar::Wrapper
 
+{{ $NEXT }}
+
 0.41  2024-06-10
   - Improve various test diagnostic messages
 

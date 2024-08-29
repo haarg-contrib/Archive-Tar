@@ -1,6 +1,6 @@
 Revision history for Perl extension Archive::Tar::Wrapper
 
-{{ $NEXT }}
+0.42    2024-08-29
   - Pod formatting improvements
   - Packaging updates
   - Add missing changelog entries

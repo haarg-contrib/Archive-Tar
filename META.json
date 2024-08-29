@@ -5,7 +5,7 @@
       "Alceu Rodrigues de Freitas Junior <glasswalk3r@yahoo.com.br>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 6.031, CPAN::Meta::Converter version 2.150010",
+   "generated_by" : "Dist::Zilla version 6.032, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "gpl_3"
    ],
@@ -23,6 +23,7 @@
       },
       "develop" : {
          "requires" : {
+            "Dumbbench" : "0",
             "Pod::Coverage::TrustPod" : "0",
             "Test::CPAN::Changes" : "0.19",
             "Test::CPAN::Meta" : "0",
@@ -46,7 +47,8 @@
             "File::Temp" : "0",
             "File::Which" : "0",
             "IPC::Run" : "0",
-            "Log::Log4perl" : "0"
+            "Log::Log4perl" : "0",
+            "perl" : "5.008001"
          }
       },
       "test" : {
@@ -65,7 +67,7 @@
    "provides" : {
       "Archive::Tar::Wrapper" : {
          "file" : "lib/Archive/Tar/Wrapper.pm",
-         "version" : "0.41"
+         "version" : "0.42"
       }
    },
    "release_status" : "stable",
@@ -79,11 +81,12 @@
          "web" : "https://github.com/haarg/Archive-Tar-Wrapper"
       }
    },
-   "version" : "0.41",
+   "version" : "0.42",
    "x_contributors" : [
       "Chris Weyl <cweyl@alumni.drew.edu>",
       "David Cantrell <david@cantrell.org.uk>",
       "David Precious <davidp@preshweb.co.uk>",
+      "Graham Knop <haarg@haarg.org>",
       "intrigeri <intrigeri@boum.org>",
       "Kent Fredric <kentfredric@gmail.com>",
       "Mark Gardner <mjg+github@phoenixtrap.com>",

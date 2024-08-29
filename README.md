@@ -151,16 +151,16 @@ for this switch is 512, but it can be changed by setting the parameter
  );
 ```
 
-The expectable parameters are:
+The allowable parameters are:
 
-- tar
-- tmpdir
-- tar\_read\_options
-- tar\_write\_options
-- tar\_gnu\_read\_options
-- tar\_gnu\_write\_options
-- max\_cmd\_line\_args: defaults to 512
-- ramdisk
+- `tar`
+- `tmpdir`
+- `tar_read_options`
+- `tar_write_options`
+- `tar_gnu_read_options`
+- `tar_gnu_write_options`
+- `max_cmd_line_args`: defaults to 512
+- `ramdisk`
 
 Returns a new instance of the class.
 
@@ -177,7 +177,7 @@ goes out of scope.
 
 `read` handles both compressed and uncompressed files. To find out if
 a file is compressed or uncompressed, it tries to guess by extension,
-then by checking the first couple of bytes in the tarfile.
+then by checking the first couple of bytes in the tar file.
 
 If only a limited number of files is needed from a tarball, they
 can be specified after the tarball name:
@@ -216,8 +216,8 @@ Expect as parameter a string with the path to the tarball.
 
 Returns:
 
-- a "z" character if the file is compressed with gzip.
-- a "j" character if the file is compressed with bzip2.
+- a "z" character if the file is compressed with `gzip`.
+- a "j" character if the file is compressed with `bzip2`.
 - a "" character if the file is not compressed at all.
 
 ## locate
@@ -255,7 +255,7 @@ $arch->add($logic_path, $stringref,
 
 If $file\_or\_stringref is a reference to a Unicode string, the `binmode`
 option has to be set to make sure the string gets written as proper UTF-8
-into the tarfile:
+into the tar file:
 
 ```perl
 $arch->add($logic_path, $stringref, { binmode => ":utf8" });
@@ -309,8 +309,8 @@ my $items = $arch->list_all();
 ```
 
 Returns a reference to a (possibly huge) array of items in the
-tarfile. Each item is a reference to an array, containing two
-elements: the relative path of the item in the tarfile and the
+tar file. Each item is a reference to an array, containing two
+elements: the relative path of the item in the tar file and the
 physical path to the unpacked file or directory on disk.
 
 To iterate over the list, the following construct can be used:
@@ -323,7 +323,7 @@ for my $entry (@{$arch->list_all()}) {
 }
 ```
 
-If the list of items in the tarfile is big, use `list_reset()` and
+If the list of items in the tar file is big, use `list_reset()` and
 `list_next()` instead of `list_all`.
 
 ## list\_next
@@ -332,8 +332,8 @@ If the list of items in the tarfile is big, use `list_reset()` and
 my ($tar_path, $phys_path, $type) = $arch->list_next();
 ```
 
-Returns the next item in the tarfile. It returns a list of three scalars:
-the relative path of the item in the tarfile, the physical path
+Returns the next item in the tar file. It returns a list of three scalars:
+the relative path of the item in the tar file, the physical path
 to the unpacked file or directory on disk, and the type of the entry
 (f=file, d=directory, l=symlink). Note that by default,
 **Archive::Tar::Wrapper** won't display directories, unless the `dirs`
@@ -376,9 +376,9 @@ It executes the `mount` program under the hood to mount a RAM disk.
 
 Expects as parameter a hash with options to mount the RAM disk, like:
 
-- size
-- type (most probably `tmpfs`)
-- tmpdir
+- `size`
+- `type` (most probably `tmpfs`)
+- `tmpdir`
 
 Returns 1 if everything goes fine.
 
@@ -403,7 +403,7 @@ create the RAM disk by hand by running
 # mount -t tmpfs -o size=20m tmpfs /mnt/myramdisk
 ```
 
-and then feeding the ramdisk as a temporary directory to
+and then feeding the RAM disk as a temporary directory to
 **Archive::Tar::Wrapper**, like
 
 ```perl
@@ -503,33 +503,9 @@ completely by installing in a different path than `C:\Program Files`.
 Installing both `bsdtar` and `bzip2` in `C:\GnuWin32` will probably be enough
 when running the installers.
 
-# LEGALESE
-
-This software is copyright (c) 2005 of Mike Schilli.
-
-This program is free software: you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with
-Archive-Tar-Wrapper. If not, see [http://www.gnu.org/licenses/](http://www.gnu.org/licenses/).
-
 # SEE ALSO
 
 - Linux Gazette article from Ben Okopnik, [issue 87](https://linuxgazette.net/87/okopnik.html).
-
-# AUTHOR
-
-2005, Mike Schilli <cpan@perlmeister.com>
-
-# MAINTAINER
-
-2018, Alceu Rodrigues de Freitas Junior <glasswalk3r@yahoo.com.br>
 
 # BUGS
 
@@ -540,11 +516,17 @@ When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
 feature.
 
+# AUTHORS
+
+- Mike Schilli <cpan@perlmeister.com>
+- Alceu Rodrigues de Freitas Junior <glasswalk3r@yahoo.com.br>
+
 # CONTRIBUTORS
 
 - Chris Weyl <cweyl@alumni.drew.edu>
 - David Cantrell <david@cantrell.org.uk>
 - David Precious <davidp@preshweb.co.uk>
+- Graham Knop <haarg@haarg.org>
 - intrigeri <intrigeri@boum.org>
 - Kent Fredric <kentfredric@gmail.com>
 - Mark Gardner &lt;mjg+github@phoenixtrap.com>
@@ -554,11 +536,6 @@ feature.
 - Randy Stauner <randy@magnificent-tears.com>
 - Sanko Robinson <sanko@cpan.org>
 - Shoichi Kaji <skaji@cpan.org>
-
-# AUTHORS
-
-- Mike Schilli <cpan@perlmeister.com>
-- Alceu Rodrigues de Freitas Junior <glasswalk3r@yahoo.com.br>
 
 # COPYRIGHT AND LICENSE
 

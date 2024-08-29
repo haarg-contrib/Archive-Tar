@@ -5,6 +5,7 @@
 use strict;
 use warnings;
 
+use 5.008001;
 use ExtUtils::MakeMaker;
 
 if ( $^O eq 'MSWin32' ) {
@@ -49,6 +50,7 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Archive-Tar-Wrapper",
   "LICENSE" => "gpl",
+  "MIN_PERL_VERSION" => "5.008001",
   "NAME" => "Archive::Tar::Wrapper",
   "PREREQ_PM" => {
     "Cwd" => 0,
@@ -64,7 +66,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.43",
+  "VERSION" => "0.42",
   "test" => {
     "TESTS" => "t/*.t"
   }
